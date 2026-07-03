@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>АЗИЯ_М — выездные фуршеты и банкеты в Корее | Корейская, европейская и азиатская кухня</title>
+<meta name="description" content="АЗИЯ_М — выездные фуршеты от 60 000 ₩/чел, банкеты, фуд-боксы и блюда на заказ. Корейские и евро салаты, супы, вторые блюда, халяль-меню. Заказ через WhatsApp: +82 10 8024 7552">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥢</text></svg>">
+<style>
+:root{
+  --wine:#6e1b21;
+  --wine-dark:#521318;
+  --wine-deep:#380c10;
+  --gold:#dcb877;
+  --gold-dark:#b98d4f;
+  --ink:#241a18;
+  --ink-soft:#5a4a46;
+  --paper:#faf5ee;
+  --card:#ffffff;
+  --line:#e9d9c7;
+  --green:#1fa855;
+  --green-dark:#168544;
+  --radius:14px;
+  --shadow:0 2px 14px rgba(27,27,31,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.55;
+}
+img{max-width:100%}
+a{color:inherit}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:var(--wine);
+  color:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.18);
+}
+.nav{
+  max-width:1100px;margin:0 auto;padding:10px 16px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.logo{font-weight:900;font-size:1.35rem;letter-spacing:.5px;white-space:nowrap}
+.logo span{background:#fff;color:var(--wine);padding:2px 8px;border-radius:6px;margin-left:2px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;font-size:.88rem;font-weight:600}
+.nav-links a{text-decoration:none;padding:6px 10px;border-radius:8px}
+.nav-links a:hover{background:rgba(255,255,255,.14)}
+.nav .wa-top{
+  margin-left:auto;text-decoration:none;background:var(--green);color:#fff;
+  font-weight:700;font-size:.88rem;padding:8px 14px;border-radius:999px;white-space:nowrap;
+}
+.nav .wa-top:hover{background:var(--green-dark)}
+
+/* ---------- hero ---------- */
+.hero{
+  background:
+    radial-gradient(ellipse at 80% -20%, rgba(220,184,119,.28), transparent 55%),
+    linear-gradient(160deg,#2e0a0e 0%,#5a161d 100%);
+  color:#fff;text-align:center;padding:72px 16px 84px;
+}
+.hero .kicker{
+  display:inline-block;background:var(--gold);color:#3a1013;
+  font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:6px 14px;border-radius:999px;margin-bottom:22px;
+}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);font-weight:900;letter-spacing:.5px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.sub{max-width:620px;margin:18px auto 0;color:#eddcce;font-size:1.05rem}
+.hero .cta-row{margin-top:34px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  font-weight:700;padding:14px 26px;border-radius:999px;font-size:1rem;
+  transition:transform .12s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{background:var(--green-dark)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hero .facts{
+  margin-top:44px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;
+}
+.fact{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--radius);padding:14px 20px;min-width:150px;
+}
+.fact b{display:block;font-size:1.25rem;color:var(--gold)}
+.fact small{color:#dcc4b6}
+
+/* ---------- sections ---------- */
+section{max-width:1100px;margin:0 auto;padding:56px 16px 8px}
+.sec-head{margin-bottom:26px}
+.sec-head h2{
+  font-size:clamp(1.5rem,4vw,2.1rem);font-weight:900;display:inline-block;
+  background:linear-gradient(transparent 62%,rgba(220,184,119,.55) 62%);padding:0 6px;
+}
+.sec-head p{color:var(--ink-soft);margin-top:8px;max-width:700px}
+
+/* services */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;
+}
+.card .ico{font-size:1.9rem}
+.card h3{font-size:1.1rem}
+.card p{color:var(--ink-soft);font-size:.93rem;flex:1}
+.card .price{font-weight:800;color:var(--ink)}
+.card .price b{font-size:1.25rem}
+.card a.order{
+  margin-top:10px;text-decoration:none;text-align:center;font-weight:700;font-size:.92rem;
+  background:var(--green);color:#fff;padding:10px 14px;border-radius:999px;
+}
+.card a.order:hover{background:var(--green-dark)}
+
+/* packages */
+.packs{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:16px}
+.pack{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;
+}
+.pack.featured{border:2px solid var(--gold-dark)}
+.pack .top{background:var(--wine);color:#fff;padding:16px 18px}
+.pack.halal .top{background:#175c33}
+.pack.featured .top{background:linear-gradient(135deg,#8a6a2f,#c9a052)}
+.pack .top h3{font-size:1.05rem}
+.pack .top .p-price{font-size:1.5rem;font-weight:900;color:var(--gold)}
+.pack.featured .top .p-price,.pack.halal .top .p-price{color:#fff}
+.pack .top .p-price small{font-size:.8rem;font-weight:600;opacity:.85}
+.pack ul{list-style:none;padding:16px 18px;flex:1;display:flex;flex-direction:column;gap:7px}
+.pack ul li{font-size:.9rem;color:var(--ink-soft);padding-left:20px;position:relative}
+.pack ul li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.pack ul li.note::before{content:"•";color:var(--gold-dark)}
+.pack .foot{padding:0 18px 18px}
+.pack .foot a{
+  display:block;text-align:center;text-decoration:none;font-weight:700;font-size:.92rem;
+  background:var(--green);color:#fff;padding:10px 14px;border-radius:999px;
+}
+.pack .foot a:hover{background:var(--green-dark)}
+
+/* menu */
+.menu-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.menu-tabs button{
+  border:1.5px solid var(--wine);background:transparent;color:var(--wine);
+  font-weight:700;font-size:.88rem;padding:9px 16px;border-radius:999px;cursor:pointer;
+  transition:all .12s ease;font-family:inherit;
+}
+.menu-tabs button:hover{background:rgba(110,27,33,.08)}
+.menu-tabs button.active{background:var(--wine);color:#fff}
+.menu-group{display:none}
+.menu-group.active{display:block;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.menu-sub{font-size:1rem;font-weight:800;margin:20px 0 10px;color:var(--ink);
+  display:flex;align-items:center;gap:10px}
+.menu-sub::after{content:"";flex:1;height:1px;background:var(--line)}
+.dishes{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:10px}
+.dish{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:12px 14px;display:flex;align-items:center;gap:10px;
+}
+.dish .d-info{flex:1;min-width:0}
+.dish .d-name{font-weight:700;font-size:.94rem}
+.dish .d-desc{font-size:.8rem;color:var(--ink-soft);margin-top:2px}
+.menu-note{
+  margin-top:18px;background:#f7ede0;border:1px solid #e3cdaf;border-radius:12px;
+  padding:14px 16px;font-size:.9rem;color:var(--ink-soft);
+}
+
+/* terms */
+.terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:16px}
+.term{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;box-shadow:var(--shadow);
+}
+.term h3{font-size:.98rem;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.term ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.term ul li{font-size:.87rem;color:var(--ink-soft);padding-left:16px;position:relative}
+.term ul li::before{content:"—";position:absolute;left:0;color:var(--gold-dark)}
+.terms-disclaimer{margin-top:16px;font-size:.82rem;color:var(--ink-soft)}
+
+/* contacts */
+.contact-wrap{
+  background:linear-gradient(150deg,var(--wine-deep),var(--wine));border-radius:20px;color:#fff;
+  padding:40px 24px;text-align:center;margin-top:10px;
+}
+.contact-wrap h2{font-size:clamp(1.4rem,4vw,2rem);font-weight:900}
+.contact-wrap h2 span{color:var(--gold)}
+.contact-wrap p{color:#e8d2c4;margin-top:10px}
+.contact-links{margin-top:26px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.contact-links a{
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;
+  padding:12px 22px;border-radius:999px;font-size:.95rem;
+}
+.c-wa{background:var(--green);color:#fff}
+.c-wa:hover{background:var(--green-dark)}
+.c-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
+.c-tel{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.c-tel:hover{border-color:var(--gold)}
+
+footer{max-width:1100px;margin:0 auto;padding:28px 16px 90px;text-align:center;
+  color:var(--ink-soft);font-size:.82rem}
+
+/* floating whatsapp */
+.wa-float{
+  position:fixed;right:18px;bottom:18px;z-index:60;
+  width:58px;height:58px;border-radius:50%;background:var(--green);
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  box-shadow:0 6px 20px rgba(31,168,85,.45);transition:transform .15s ease;
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+
+@media (max-width:640px){
+  .nav-links{display:none}
+  .hero{padding:52px 16px 60px}
+  section{padding:44px 14px 6px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">АЗИЯ<span>_М</span></div>
+    <nav class="nav-links">
+      <a href="#services">Услуги</a>
+      <a href="#packages">Пакеты</a>
+      <a href="#menu">Меню</a>
+      <a href="#terms">Условия</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="wa-top" href="https://wa.me/821080247552" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="kicker">Организация семейных торжеств</div>
+  <h1>АЗИЯ_М — вкус, который<br>приезжает <em>к вам</em></h1>
+  <p class="sub">Корейская, европейская и азиатская кухня для ваших праздников и мероприятий.
+     Выездные фуршеты, банкеты под ключ, фуд-боксы, халяль-меню и блюда на заказ.</p>
+  <div class="cta-row">
+    <a class="btn btn-wa" href="https://wa.me/821080247552?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D1%84%D1%83%D1%80%D1%88%D0%B5%D1%82%20%2F%20%D0%B1%D0%B0%D0%BD%D0%BA%D0%B5%D1%82" target="_blank" rel="noopener">💬 Заказать в WhatsApp</a>
+    <a class="btn btn-ghost" href="#menu">Смотреть меню</a>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>от 60 000 ₩</b><small>фуршет / человек</small></div>
+    <div class="fact"><b>60+ блюд</b><small>в меню на заказ</small></div>
+    <div class="fact"><b>Халяль</b><small>отдельное меню</small></div>
+    <div class="fact"><b>5 часов</b><small>банкет под ключ</small></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="sec-head">
+    <h2>Наши услуги</h2>
+    <p>Формат под любое событие — от корпоратива и свадьбы до ужина дома.</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="ico">🥂</div>
+      <h3>Выездной фуршет</h3>
+      <p>Финальная цена формируется индивидуально под формат мероприятия. Все позиции согласовываются на консультации.</p>
+      <div class="price">от <b>60 000 ₩</b> / чел.</div>
+      <a class="order" href="https://wa.me/821080247552?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4%D0%BD%D0%BE%D0%B9%20%D1%84%D1%83%D1%80%D1%88%D0%B5%D1%82" target="_blank" rel="noopener">Обсудить фуршет</a>
+    </div>
+    <div class="card">
+      <div class="ico">🍱</div>
+      <h3>Фуд-боксы под заказ</h3>
+      <p>Готовые наборы блюд в удобной упаковке — для офиса, пикника или домашнего праздника.</p>
+      <div class="price">цена <b>по запросу</b></div>
+      <a class="order" href="https://wa.me/821080247552?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D1%8E%D1%82%20%D1%84%D1%83%D0%B4-%D0%B1%D0%BE%D0%BA%D1%81%D1%8B" target="_blank" rel="noopener">Заказать фуд-бокс</a>
+    </div>
+    <div class="card">
+      <div class="ico">🍜</div>
+      <h3>Блюда по отдельности</h3>
+      <p>Каждое блюдо из меню можно заказать отдельно. Доставка за счёт покупателя либо самовывоз из заведения.</p>
+      <div class="price">см. <b>меню ниже</b></div>
+      <a class="order" href="#menu">Выбрать блюда</a>
+    </div>
+    <div class="card">
+      <div class="ico">🎉</div>
+      <h3>Банкет под ключ</h3>
+      <p>Проведение торжеств до 100+ гостей: меню, накрытие, обслуживание. Пакеты «Стандарт», «Премиум», VIP и халяль.</p>
+      <div class="price">от <b>60 000 ₩</b> / чел.</div>
+      <a class="order" href="#packages">Смотреть пакеты</a>
+    </div>
+  </div>
+</section>
+
+<section id="packages">
+  <div class="sec-head">
+    <h2>Банкетные пакеты</h2>
+    <p>Стоимость указана за одну персону. Состав каждого пакета согласовывается с организатором.</p>
+  </div>
+  <div class="packs">
+    <div class="pack">
+      <div class="top">
+        <h3>Пакет «Стандарт»</h3>
+        <div class="p-price">60 000 ₩ <small>/ персона</small></div>
+      </div>
+      <ul>
+        <li>Суп — 1 позиция на выбор</li>
+        <li>Основное горячее — 1 позиция (общее блюдо)</li>
+        <li>Третье горячее на выбор: манты / ханум / хинкали</li>
+        <li>Салаты — 7 наименований (корейские и европейские), выход 250–300 г</li>
+        <li>Самса, хлебное ассорти, мясная нарезка — включены</li>
+        <li class="note">Пакет лимитированный, накрытие столов — разовая подача</li>
+      </ul>
+      <div class="foot"><a href="https://wa.me/821080247552?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%20%C2%AB%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%C2%BB" target="_blank" rel="noopener">Выбрать «Стандарт»</a></div>
+    </div>
+
+    <div class="pack">
+      <div class="top">
+        <h3>Пакет «Стандарт +»</h3>
+        <div class="p-price">65 000 ₩ <small>/ персона</small></div>
+      </div>
+      <ul>
+        <li>Все позиции пакета «Стандарт»</li>
+        <li>Напитки — разовая подача:</li>
+        <li>Водка</li>
+        <li>Домашнее вино</li>
+        <li>Безалкогольные напитки</li>
+      </ul>
+      <div class="foot"><a href="https://wa.me/821080247552?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%20%C2%AB%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%2B%C2%BB" target="_blank" rel="noopener">Выбрать «Стандарт +»</a></div>
+    </div>
+
+    <div class="pack featured">
+      <div class="top">
+        <h3>Пакет «Премиум»</h3>
+        <div class="p-price">75 000 ₩ <small>/ персона</small></div>
+      </div>
+      <ul>
+        <li>Всё из пакета «Стандарт», плюс:</li>
+        <li>Рыбная нарезка: лосось / креветки / скумбрия</li>
+        <li>Выпечка на выбор — 2 позиции: пегоди (дрожжевые / крахмальные рисовые), слоёная выпечка (говядина / свинина / курица)</li>
+        <li>Бар безлимитно: водка, домашнее вино, соки, кола, морс, чай</li>
+        <li>Десерт на выбор: фрукты и сладости или мороженое с фруктами</li>
+        <li class="note">Вместо десерта — 1 дополнительный салат по желанию</li>
+        <li class="note">Со своим алкоголем — 65 000 ₩ / персона</li>
+      </ul>
+      <div class="foot"><a href="https://wa.me/821080247552?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%20%C2%AB%D0%9F%D1%80%D0%B5%D0%BC%D0%B8%D1%83%D0%BC%C2%BB" target="_blank" rel="noopener">Выбрать «Премиум»</a></div>
+    </div>
+
+    <div class="pack halal">
+      <div class="top">
+        <h3>Халяль-меню 🌙</h3>
+        <div class="p-price">65 000 ₩ <small>/ персона</small></div>
+      </div>
+      <ul>
+        <li>Первое блюдо (суп) — 1 позиция на выбор</li>
+        <li>Основное блюдо</li>
+        <li>Мясной сет: говядина с овощами, куриные ножки и крылья, баранина, овощи</li>
+        <li>Бешбармак включён (можно заменить по согласованию)</li>
+        <li>Салаты — 7 позиций на выбор</li>
+        <li>Закуски: самса куриная и из говядины, баурсаки, жареные пельмени с картофелем, хлебное ассорти</li>
+        <li>Напитки: морс, Pepsi, сок, чай с молоком</li>
+        <li>Дополнительно: фрукты, хворост</li>
+      </ul>
+      <div class="foot"><a href="https://wa.me/821080247552?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D1%85%D0%B0%D0%BB%D1%8F%D0%BB%D1%8C-%D0%BC%D0%B5%D0%BD%D1%8E" target="_blank" rel="noopener">Выбрать халяль-меню</a></div>
+    </div>
+
+    <div class="pack">
+      <div class="top">
+        <h3>Пакет «Premium VIP»</h3>
+        <div class="p-price">по запросу</div>
+      </div>
+      <ul>
+        <li>Напитки, закуски и салаты подаются по запросу гостей</li>
+        <li>Без дополнительной платы за подачу</li>
+        <li>Состав и стоимость обговариваются с организатором на месте</li>
+      </ul>
+      <div class="foot"><a href="https://wa.me/821080247552?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%20Premium%20VIP" target="_blank" rel="noopener">Узнать про VIP</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="sec-head">
+    <h2>Меню</h2>
+    <p>Каждое блюдо можно заказать отдельно — просто напишите нам в WhatsApp. Доставка за счёт покупателя либо самовывоз из заведения.</p>
+  </div>
+  <div class="menu-tabs" id="menuTabs"></div>
+  <div id="menuGroups"></div>
+  <div class="menu-note">
+    💡 При желании можно заказать любой салат <b>не по меню</b>. Хе из рыбы — по сезону.
+    Примеры блюд и подачи — в <a href="https://www.instagram.com/asiam_kr" target="_blank" rel="noopener">Instagram</a>.
+  </div>
+</section>
+
+<section id="terms">
+  <div class="sec-head">
+    <h2>Условия проведения банкета</h2>
+    <p>Кратко о главном — полные условия фиксируются в договоре.</p>
+  </div>
+  <div class="terms">
+    <div class="term">
+      <h3>💰 Залог и бронирование</h3>
+      <ul>
+        <li>Банкет до 50 человек — залог 800 000 ₩</li>
+        <li>От 50 до 100 человек — 1 000 000 ₩</li>
+        <li>Свыше 100 человек — 1 500 000 ₩</li>
+        <li>При отмене мероприятия залог не возвращается</li>
+        <li>Скриншот оплаты — организатору в WhatsApp</li>
+      </ul>
+    </div>
+    <div class="term">
+      <h3>📋 Меню и сроки</h3>
+      <ul>
+        <li>За 1,5–2 месяца до даты — согласование меню и точного числа гостей</li>
+        <li>Количество гостей фиксируется в договоре</li>
+        <li>Уменьшение числа гостей после подписания невозможно</li>
+        <li>Согласование — с одним ответственным лицом по договору</li>
+      </ul>
+    </div>
+    <div class="term">
+      <h3>⏱ Продолжительность</h3>
+      <ul>
+        <li>Торжество — 5 часов с времени, указанного в договоре</li>
+        <li>Каждый дополнительный час — 500 000 ₩</li>
+        <li>Время прибытия персонала оговаривается заранее</li>
+      </ul>
+    </div>
+    <div class="term">
+      <h3>💳 Оплата и сборы</h3>
+      <ul>
+        <li>Сервисный сбор — +10%</li>
+        <li>Оплата картой — +10% НДС (VAT)</li>
+        <li>Документы для налоговой — +10%</li>
+      </ul>
+    </div>
+    <div class="term">
+      <h3>👶 Дети</h3>
+      <ul>
+        <li>Дети 6–10 лет — 35 000 ₩ / персона</li>
+        <li>Старше 10 лет — по взрослому тарифу</li>
+        <li>Если детей больше 10 — отдельное детское меню по согласованию</li>
+      </ul>
+    </div>
+  </div>
+  <p class="terms-disclaimer">Информация носит справочный характер. Точные условия уточняйте у организатора при заключении договора.</p>
+</section>
+
+<section id="contacts">
+  <div class="contact-wrap">
+    <h2>Готовы обсудить <span>ваше мероприятие?</span></h2>
+    <p>Напишите нам в WhatsApp — подберём меню и формат под ваш праздник и бюджет.</p>
+    <div class="contact-links">
+      <a class="c-wa" href="https://wa.me/821080247552" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="c-tel" href="tel:+821080247552">📞 +82 10 8024 7552</a>
+      <a class="c-ig" href="https://www.instagram.com/asiam_kr" target="_blank" rel="noopener">📸 Instagram: asiam_kr</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> АЗИЯ_М — выездные фуршеты и банкеты · Южная Корея<br>
+  WhatsApp: +82 10 8024 7552 · Instagram: <a href="https://www.instagram.com/asiam_kr" target="_blank" rel="noopener">asiam_kr</a> / <a href="https://www.instagram.com/Vladsim86" target="_blank" rel="noopener">Vladsim86</a>
+</footer>
+
+<a class="wa-float" href="https://wa.me/821080247552" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.04 3C9.06 3 3.4 8.66 3.4 15.64c0 2.23.58 4.4 1.69 6.31L3.3 28.7l6.93-1.75a12.6 12.6 0 0 0 5.8 1.42h.01c6.98 0 12.64-5.66 12.64-12.64C28.68 8.66 23.02 3 16.04 3zm0 22.96h-.01c-1.9 0-3.75-.51-5.36-1.47l-.38-.23-3.98 1 1.03-3.88-.25-.4a10.2 10.2 0 0 1-1.57-5.45c0-5.65 4.6-10.24 10.25-10.24 2.74 0 5.31 1.07 7.24 3a10.18 10.18 0 0 1 3 7.25c0 5.65-4.6 10.25-10.24 10.25zm5.62-7.67c-.31-.15-1.82-.9-2.1-1-.28-.1-.49-.15-.7.16-.2.3-.79.99-.97 1.2-.18.2-.36.23-.66.08-.31-.16-1.3-.48-2.48-1.53-.92-.82-1.53-1.83-1.71-2.13-.18-.31-.02-.48.13-.63.14-.14.31-.36.46-.54.16-.18.21-.31.31-.51.1-.21.05-.39-.02-.54-.08-.15-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.53h-.6c-.2 0-.53.07-.81.38-.28.3-1.06 1.03-1.06 2.52s1.08 2.93 1.24 3.13c.15.2 2.14 3.26 5.18 4.57.72.31 1.29.5 1.73.64.72.23 1.38.2 1.9.12.58-.09 1.82-.75 2.08-1.47.26-.72.26-1.33.18-1.46-.08-.13-.28-.2-.59-.36z"/></svg>
+</a>
+
+<script>
+const MENU = [
+  {
+    tab: "Закуски и салаты",
+    groups: [{
+      title: "Закуски и салаты",
+      items: [
+        ["Сотте из баклажан 🍆", ""],
+        ["Тарталетки жульен", "слоёное тесто, грибы, курица, сыр"],
+        ["Тарталетки с лососью", "лосось, крем-чиз, огурец, зелень"],
+        ["Фирменная закуска из рисовой бумаги", "креветки, огурцы, крабовые волокна, творожный сыр"],
+        ["Тостерная закуска", "крем-чиз, огурец, красная рыба, зелень"],
+        ["Грибничок", "запечённые грибы, яйцо, тёртый сыр, майонез"],
+        ["Рулеты из лаваша", "лаваш, крабовые палочки, яйца, огурцы, майонез, чеснок, зелень"],
+        ["Брускетта", "багет, помидоры, зелень, крем-чиз, шпроты или лосось"],
+        ["Яичные блины с крабовыми палочками", "волокна крабовых палочек, сыр, майонез, зелень"],
+        ["Закусочные мини-бургеры", ""],
+        ["Фаршированные блины с курицей и грибами", ""]
+      ]
+    }]
+  },
+  {
+    tab: "Корейские салаты",
+    groups: [{
+      title: "Корейские салаты",
+      items: [
+        ["Папоротник", ""],
+        ["Огурцы с мясом в пикантном соусе", ""],
+        ["Хе из требухи", ""],
+        ["Хе из куриной грудки", ""],
+        ["Хе из рыбы", "по сезону"],
+        ["Жареные древесные грибы", ""],
+        ["Фаршированный перец", ""],
+        ["Чапче", ""],
+        ["Жареная морская капуста", ""],
+        ["Муги с овощами", "крахмальный холодец"],
+        ["Перец жареный со свининой", ""],
+        ["Салат витаминный в корейском стиле", "капуста, морковь, свёкла, зелёный лук, кунжутное масло, уксус, сахар, устричный соус, корень имбиря, кунжут"],
+        ["Салат из шпината", ""],
+        ["Салат из баклажанов по-корейски", ""],
+        ["Коралловые гребешки", "гребешки, репчатый лук, морковь, болгарский перец, огурец, уксус, кунжутное масло, чеснок, специи"],
+        ["Заправленные осьминожки с овощами", ""],
+        ["Тыбы по-китайски с овощами", ""],
+        ["Фаршированное тофу с мясом", ""],
+        ["Жареная острая куриная голень с ток", "корейские клёцки"]
+      ]
+    }]
+  },
+  {
+    tab: "Евро салаты",
+    groups: [{
+      title: "Евро салаты",
+      items: [
+        ["Оливье", ""],
+        ["Нежность", "ананасы, кукуруза, куриная грудка, тёртый сыр, майонез"],
+        ["Французский салат", "капуста, морковь, свёкла, яйцо, мясо, пай, майонез"],
+        ["Подсолнух", "курица, грибы, яйцо, маслины, чипсы, майонез"],
+        ["Гнездо глухаря", "огурец, пай, кукуруза, перепелиные яйца, майонез"],
+        ["Особый", "помидоры, чеснок, сухарики, сыр, кукуруза, копчёный карбонат"],
+        ["Цезарь", "с курицей или креветками"],
+        ["Салат с хрустящими баклажанами", "баклажаны, руккола, помидоры, крем-чиз, чили-соус"],
+        ["Греческий салат", ""],
+        ["Жозефина", "курица, шампиньоны, яйца, помидор, сыр, зелёный лук, майонез"],
+        ["Микс салатов", "сладкий перец, огурцы, помидоры, колбаса, маслины, заправка на оливковом масле"],
+        ["Охотник", "варёная говядина, помидоры, огурцы, паприка, зелёный горошек, заправка: соль, чеснок, масло, соевый соус"],
+        ["Креветки на пляже", "руккола, жареные креветки, авокадо, черри, оливковое масло, бальзамик, кедровые орехи"],
+        ["Русская закуска", "селёдка, разносол, картофель"],
+        ["Холодец", ""],
+        ["Микс-салат с копчёной уткой", "копчёная утка, микс салата, черри, перепелиные яйца, бальзамик"]
+      ]
+    }]
+  },
+  {
+    tab: "Первые блюда",
+    groups: [
+      { title: "Евро позиции", items: [
+        ["Солянка сборная", "с копчёностями"],
+        ["Лапша куриная или лапша с фрикадельками", ""],
+        ["Окрошка", ""],
+        ["Пельмени с бульоном", ""],
+        ["Холодный борщ", ""],
+        ["Том ям", ""]
+      ]},
+      { title: "Корейские позиции", items: [
+        ["Сиряк тямури", ""],
+        ["Юккедянг", "острый суп"],
+        ["Кукси", ""]
+      ]},
+      { title: "Азиатские позиции", items: [
+        ["Бешбармак", ""],
+        ["Шурпа", "говядина"],
+        ["Лагман", ""],
+        ["Суп с фрикадельками, нутом и лапшой", ""],
+        ["Голубцы", ""]
+      ]}
+    ]
+  },
+  {
+    tab: "Вторые блюда",
+    groups: [{
+      title: "Вторые блюда",
+      items: [
+        ["Свинина запечённая с овощами", ""],
+        ["Мясной рулет с грибами", "свинина"],
+        ["Жареная свиная шейка с луком и грибами", ""],
+        ["Мясо по-французски", ""],
+        ["Свиной окорок в красном вине", ""],
+        ["Мясо по-китайски", ""],
+        ["Утка фаршированная с ананасами и яблоками", "с мандариновым цитрусом"],
+        ["Утка тушёная с яблоками и черносливом", ""],
+        ["Говядина с болгарским перцем и картофелем по-деревенски", ""],
+        ["Картофельный рулет с говяжьим фаршем", ""],
+        ["Маринованная свинина, куриный окорок", "запечённый в конвектомате"]
+      ]
+    }]
+  }
+];
+
+const tabsEl = document.getElementById("menuTabs");
+const groupsEl = document.getElementById("menuGroups");
+
+MENU.forEach((cat, i) => {
+  const btn = document.createElement("button");
+  btn.textContent = cat.tab;
+  btn.className = i === 0 ? "active" : "";
+  btn.onclick = () => {
+    tabsEl.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    groupsEl.querySelectorAll(".menu-group").forEach(g => g.classList.remove("active"));
+    document.getElementById("mg-" + i).classList.add("active");
+  };
+  tabsEl.appendChild(btn);
+
+  const wrap = document.createElement("div");
+  wrap.className = "menu-group" + (i === 0 ? " active" : "");
+  wrap.id = "mg-" + i;
+  cat.groups.forEach(g => {
+    if (cat.groups.length > 1) {
+      const h = document.createElement("div");
+      h.className = "menu-sub";
+      h.textContent = g.title;
+      wrap.appendChild(h);
+    }
+    const grid = document.createElement("div");
+    grid.className = "dishes";
+    g.items.forEach(([name, desc]) => {
+      const d = document.createElement("div");
+      d.className = "dish";
+      d.innerHTML =
+        `<div class="d-info"><div class="d-name"></div>${desc ? '<div class="d-desc"></div>' : ""}</div>`;
+      d.querySelector(".d-name").textContent = name;
+      if (desc) d.querySelector(".d-desc").textContent = desc;
+      grid.appendChild(d);
+    });
+    wrap.appendChild(grid);
+  });
+  groupsEl.appendChild(wrap);
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
