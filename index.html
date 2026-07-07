@@ -45,7 +45,8 @@ header{
   max-width:1100px;margin:0 auto;padding:10px 16px;
   display:flex;align-items:center;gap:14px;flex-wrap:wrap;
 }
-.logo{font-weight:900;font-size:1.35rem;letter-spacing:.5px;white-space:nowrap}
+.logo{font-weight:900;font-size:1.35rem;letter-spacing:.5px;white-space:nowrap;display:flex;align-items:center;gap:9px}
+.logo svg{width:36px;height:36px;flex-shrink:0}
 .logo span{background:#fff;color:var(--wine);padding:2px 8px;border-radius:6px;margin-left:2px}
 .nav-links{display:flex;gap:4px;flex-wrap:wrap;font-size:.88rem;font-weight:600}
 .nav-links a{text-decoration:none;padding:6px 10px;border-radius:8px}
@@ -59,10 +60,13 @@ header{
 /* ---------- hero ---------- */
 .hero{
   background:
-    radial-gradient(ellipse at 80% -20%, rgba(220,184,119,.28), transparent 55%),
-    linear-gradient(160deg,#2e0a0e 0%,#5a161d 100%);
+    linear-gradient(160deg, rgba(40,8,11,.9) 0%, rgba(78,18,24,.84) 100%),
+    url('img/hero.jpg') center/cover no-repeat;
   color:#fff;text-align:center;padding:72px 16px 84px;
 }
+.hero .logo-big{width:150px;height:150px;margin:0 auto 20px;display:block;
+  filter:drop-shadow(0 8px 26px rgba(0,0,0,.4))}
+.hero .slogan{margin-top:22px;font-size:1.15rem;font-style:italic;color:var(--gold);font-weight:600}
 .hero .kicker{
   display:inline-block;background:var(--gold);color:#3a1013;
   font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
@@ -102,6 +106,17 @@ section{max-width:1100px;margin:0 auto;padding:56px 16px 8px}
 .sec-head p{color:var(--ink-soft);margin-top:8px;max-width:700px}
 
 /* services */
+.svc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px;margin-bottom:26px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:12px 15px;display:flex;align-items:flex-start;gap:10px;font-size:.92rem;font-weight:600}
+.svc span{font-size:1.25rem;line-height:1.2}
+.slogan-band{background:linear-gradient(150deg,var(--wine-deep),var(--wine));color:#fff;
+  text-align:center;padding:44px 20px;margin:56px 0 0}
+.slogan-band .q{font-size:clamp(1.25rem,3.5vw,1.8rem);font-weight:800;font-style:italic;
+  max-width:760px;margin:0 auto}
+.slogan-band .q em{font-style:italic;color:var(--gold)}
+.slogan-band small{display:block;margin-top:12px;color:#e0c8ba;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:700;font-size:.75rem}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
 .card{
   background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
@@ -181,13 +196,55 @@ section{max-width:1100px;margin:0 auto;padding:56px 16px 8px}
   padding:14px 16px;font-size:.9rem;color:var(--ink-soft);
 }
 
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));grid-auto-rows:235px;gap:12px}
+.gallery figure{margin:0;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow)}
+.gallery figure.g-tall{grid-row:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s ease}
+.gallery figure:hover img{transform:scale(1.04)}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(240px,400px) 1fr;gap:28px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);
+  padding:24px;overflow:hidden}
+.about img{width:100%;border-radius:14px;display:block}
+.about h3{font-size:1.3rem;margin-bottom:10px}
+.about p{color:var(--ink-soft);font-size:.97rem;margin-bottom:10px}
+.about .sign{font-style:italic;color:var(--wine);font-weight:700}
+@media (max-width:760px){.about{grid-template-columns:1fr}}
+
+/* request form */
+.req-wrap{background:var(--card);border:1px solid var(--line);border-radius:20px;
+  box-shadow:var(--shadow);padding:28px 24px;max-width:760px;margin:0 auto}
+.req-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.req-form .full{grid-column:1/-1}
+.req-form label{display:block;font-weight:700;font-size:.85rem;margin-bottom:5px}
+.req-form input,.req-form select,.req-form textarea{
+  width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;
+  font-family:inherit;font-size:.95rem;background:var(--paper);color:var(--ink)}
+.req-form input:focus,.req-form select:focus,.req-form textarea:focus{
+  outline:none;border-color:var(--wine)}
+.req-form textarea{resize:vertical;min-height:84px}
+.req-form button{
+  grid-column:1/-1;background:var(--green);color:#fff;border:none;cursor:pointer;
+  font-family:inherit;font-weight:800;font-size:1rem;padding:14px;border-radius:999px;
+  transition:background .12s ease}
+.req-form button:hover{background:var(--green-dark)}
+.req-note{grid-column:1/-1;font-size:.82rem;color:var(--ink-soft);text-align:center}
+@media (max-width:560px){.req-form{grid-template-columns:1fr}}
+
 /* terms */
 .terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:16px}
 .term{
   background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
   padding:20px;box-shadow:var(--shadow);
 }
+.term.wide{grid-column:1/-1}
 .term h3{font-size:.98rem;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.term .lead{font-size:.9rem;color:var(--ink-soft);margin-bottom:10px}
+.term .extend{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+.term .extend div{background:#f7ede0;border:1px solid #e3cdaf;border-radius:10px;
+  padding:9px 14px;font-size:.86rem;font-weight:700;color:var(--ink)}
 .term ul{list-style:none;display:flex;flex-direction:column;gap:6px}
 .term ul li{font-size:.87rem;color:var(--ink-soft);padding-left:16px;position:relative}
 .term ul li::before{content:"—";position:absolute;left:0;color:var(--gold-dark)}
@@ -237,12 +294,24 @@ footer{max-width:1100px;margin:0 auto;padding:28px 16px 90px;text-align:center;
 
 <header>
   <div class="nav">
-    <div class="logo">АЗИЯ<span>_М</span></div>
+    <div class="logo">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="98" fill="#6e1b21"/>
+        <circle cx="100" cy="100" r="87" fill="none" stroke="#fff" stroke-width="3"/>
+        <text x="100" y="58" font-family="Snell Roundhand,Segoe Script,Brush Script MT,cursive" font-size="38" font-style="italic" fill="#fff" text-anchor="middle">Asia</text>
+        <path d="M84 68 L97 74.5 L97 81.5 L84 88 Z M116 68 L103 74.5 L103 81.5 L116 88 Z" fill="#fff"/>
+        <rect x="97" y="73.5" width="6" height="9" rx="1.5" fill="#fff"/>
+        <text x="100" y="148" font-family="Arial Black,Arial,sans-serif" font-size="78" font-weight="900" fill="#fff" text-anchor="middle">M</text>
+        <text x="100" y="170" font-family="Snell Roundhand,Segoe Script,Brush Script MT,cursive" font-size="15" font-style="italic" fill="#fff" text-anchor="middle">семейные торжества</text>
+      </svg>
+      АЗИЯ<span>_М</span></div>
     <nav class="nav-links">
       <a href="#services">Услуги</a>
       <a href="#packages">Пакеты</a>
       <a href="#menu">Меню</a>
+      <a href="#gallery">Фото</a>
       <a href="#terms">Условия</a>
+      <a href="#request">Заявка</a>
       <a href="#contacts">Контакты</a>
     </nav>
     <a class="wa-top" href="https://wa.me/821080247552" target="_blank" rel="noopener">WhatsApp</a>
@@ -250,10 +319,20 @@ footer{max-width:1100px;margin:0 auto;padding:28px 16px 90px;text-align:center;
 </header>
 
 <div class="hero">
-  <div class="kicker">Организация семейных торжеств</div>
+  <svg class="logo-big" viewBox="0 0 200 200" aria-label="Логотип Asia M">
+    <circle cx="100" cy="100" r="98" fill="#6e1b21"/>
+    <circle cx="100" cy="100" r="87" fill="none" stroke="#fff" stroke-width="2.5"/>
+    <text x="100" y="58" font-family="Snell Roundhand,Segoe Script,Brush Script MT,cursive" font-size="38" font-style="italic" fill="#fff" text-anchor="middle">Asia</text>
+    <path d="M84 68 L97 74.5 L97 81.5 L84 88 Z M116 68 L103 74.5 L103 81.5 L116 88 Z" fill="#fff"/>
+    <rect x="97" y="73.5" width="6" height="9" rx="1.5" fill="#fff"/>
+    <text x="100" y="148" font-family="Arial Black,Arial,sans-serif" font-size="78" font-weight="900" fill="#fff" text-anchor="middle">M</text>
+    <text x="100" y="170" font-family="Snell Roundhand,Segoe Script,Brush Script MT,cursive" font-size="15" font-style="italic" fill="#fff" text-anchor="middle">семейные торжества</text>
+  </svg>
+  <div class="kicker">Гид праздника и застолья в Южной Корее</div>
   <h1>АЗИЯ_М — вкус, который<br>приезжает <em>к вам</em></h1>
   <p class="sub">Корейская, европейская и азиатская кухня для ваших праздников и мероприятий.
      Выездные фуршеты, банкеты под ключ, фуд-боксы, халяль-меню и блюда на заказ.</p>
+  <p class="slogan">Мы дарим эмоции, радость и вкус ✨</p>
   <div class="cta-row">
     <a class="btn btn-wa" href="https://wa.me/821080247552?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D1%84%D1%83%D1%80%D1%88%D0%B5%D1%82%20%2F%20%D0%B1%D0%B0%D0%BD%D0%BA%D0%B5%D1%82" target="_blank" rel="noopener">💬 Заказать в WhatsApp</a>
     <a class="btn btn-ghost" href="#menu">Смотреть меню</a>
@@ -269,7 +348,18 @@ footer{max-width:1100px;margin:0 auto;padding:28px 16px 90px;text-align:center;
 <section id="services">
   <div class="sec-head">
     <h2>Наши услуги</h2>
-    <p>Формат под любое событие — от корпоратива и свадьбы до ужина дома.</p>
+    <p>АЗИЯ_М — гид праздника и застолья в Южной Корее. Формат под любое событие — от корпоратива и свадьбы до ужина дома.</p>
+  </div>
+  <div class="svc-list">
+    <div class="svc"><span>🏛</span>Выездной кейтеринг в южнокорейских банкетных залах — накрываем на столы</div>
+    <div class="svc"><span>🏡</span>Обслуживание в загородных домах</div>
+    <div class="svc"><span>💼</span>Фуршеты на конференции и открытия офисов</div>
+    <div class="svc"><span>🎊</span>Организация праздника под ключ</div>
+    <div class="svc"><span>🐓</span>Свадебные петухи и свадебный стол</div>
+    <div class="svc"><span>🍱</span>Заказ фуд-боксов</div>
+    <div class="svc"><span>🛵</span>Отдельные блюда и закуски с доставкой на дом</div>
+    <div class="svc"><span>🔑</span>Помощь в подборе загородных домов</div>
+    <div class="svc"><span>🗺</span>Выездной кейтеринг по всей Южной Корее</div>
   </div>
   <div class="cards">
     <div class="card">
@@ -302,6 +392,11 @@ footer{max-width:1100px;margin:0 auto;padding:28px 16px 90px;text-align:center;
     </div>
   </div>
 </section>
+
+<div class="slogan-band">
+  <div class="q">«Мы создаём праздник, а вам остаётся только <em>наслаждаться</em> —<br>дарим эмоции, радость и вкус»</div>
+  <small>АЗИЯ_М — организация семейных торжеств</small>
+</div>
 
 <section id="packages">
   <div class="sec-head">
@@ -513,6 +608,36 @@ footer{max-width:1100px;margin:0 auto;padding:28px 16px 90px;text-align:center;
   </div>
 </section>
 
+<section id="gallery">
+  <div class="sec-head">
+    <h2>Наши работы</h2>
+    <p>Так выглядят наши фуршеты вживую — свежо, ярко и с душой. Больше фото и видео — в
+       <a href="https://www.instagram.com/asiam_kr" target="_blank" rel="noopener">Instagram</a>.</p>
+  </div>
+  <div class="gallery">
+    <figure class="g-tall"><img src="img/gallery-2.jpg" alt="Фуршетная подача: брускетты с креветками и порционные салаты" loading="lazy"></figure>
+    <figure><img src="img/gallery-1.jpg" alt="Порционные салаты и закуски в фуршетных креманках" loading="lazy"></figure>
+    <figure><img src="img/gallery-3.jpg" alt="Выездной фуршет АЗИЯ_М: общий вид накрытого стола" loading="lazy"></figure>
+  </div>
+</section>
+
+<section id="about">
+  <div class="sec-head">
+    <h2>Кто готовит ваш праздник</h2>
+  </div>
+  <div class="about">
+    <img src="img/vladimir.jpg" alt="Владимир — владелец АЗИЯ_М — готовит на гриле" loading="lazy">
+    <div>
+      <h3>Владимир — владелец АЗИЯ_М</h3>
+      <p>За каждым нашим мероприятием стоит команда во главе с Владимиром — он лично участвует
+         в подготовке и следит, чтобы каждое блюдо доехало до вашего стола идеальным.</p>
+      <p>Живой огонь, свежие продукты и внимание к деталям — от первого звонка до последнего
+         горячего блюда. Мы готовим так, как готовили бы для своей семьи.</p>
+      <p class="sign">«Мы дарим эмоции, радость и вкус»</p>
+    </div>
+  </div>
+</section>
+
 <section id="terms">
   <div class="sec-head">
     <h2>Условия проведения банкета</h2>
@@ -538,12 +663,29 @@ footer{max-width:1100px;margin:0 auto;padding:28px 16px 90px;text-align:center;
         <li>Согласование — с одним ответственным лицом по договору</li>
       </ul>
     </div>
-    <div class="term">
-      <h3>⏱ Продолжительность</h3>
+    <div class="term wide">
+      <h3>🍽 Банкет в нашем ресторане</h3>
+      <p class="lead">На проведение торжества предоставляется <b>5 часов банкетного времени</b> с момента начала
+        мероприятия, указанного в договоре, а также дополнительно <b>1 час</b> для комфортного сбора
+        и размещения опаздывающих гостей.</p>
+      <p class="lead"><b>Пример:</b></p>
       <ul>
-        <li>Торжество — 5 часов с времени, указанного в договоре</li>
-        <li>Каждый дополнительный час — 500 000 ₩</li>
-        <li>Время прибытия персонала оговаривается заранее</li>
+        <li>Приглашение гостей — 17:00</li>
+        <li>С 17:00 начинается рассадка гостей и подача холодных закусок</li>
+        <li>Блюда, которые подаются горячими, выносятся поэтапно в соответствии с программой мероприятия</li>
+        <li>Официальное начало банкета — 18:00</li>
+        <li>Время проведения банкета — с 18:00 до 23:00</li>
+      </ul>
+      <div class="extend">
+        <div>Продление: +1 час — 600 000 ₩</div>
+        <div>+2 часа — 1 100 000 ₩</div>
+      </div>
+    </div>
+    <div class="term">
+      <h3>🚚 Кейтеринг</h3>
+      <ul>
+        <li>Время прибытия персонала на площадку и время на подготовку заранее согласовываются с заказчиком</li>
+        <li>Зависят от формата мероприятия, количества гостей и особенностей локации</li>
       </ul>
     </div>
     <div class="term">
@@ -564,6 +706,56 @@ footer{max-width:1100px;margin:0 auto;padding:28px 16px 90px;text-align:center;
     </div>
   </div>
   <p class="terms-disclaimer">Информация носит справочный характер. Точные условия уточняйте у организатора при заключении договора.</p>
+</section>
+
+<section id="request">
+  <div class="sec-head">
+    <h2>Оставить заявку</h2>
+    <p>Заполни форму — заявка откроется у тебя в WhatsApp готовым сообщением, останется только нажать «Отправить».</p>
+  </div>
+  <div class="req-wrap">
+    <form class="req-form" onsubmit="
+      var f=this;
+      var m='Здравствуйте! Хочу оставить заявку:\nИмя: '+f.rname.value+'\nФормат: '+f.rformat.value;
+      if(f.rdate.value)m+='\nДата: '+f.rdate.value;
+      if(f.rguests.value)m+='\nГостей: '+f.rguests.value;
+      if(f.rcomment.value)m+='\nПожелания: '+f.rcomment.value;
+      window.open('https://wa.me/821080247552?text='+encodeURIComponent(m),'_blank');
+      return false;">
+      <div>
+        <label for="rname">Ваше имя *</label>
+        <input id="rname" name="rname" type="text" required placeholder="Как к вам обращаться">
+      </div>
+      <div>
+        <label for="rformat">Формат мероприятия *</label>
+        <select id="rformat" name="rformat" required>
+          <option>Банкет в ресторане</option>
+          <option>Выездной фуршет</option>
+          <option>Кейтеринг в банкетном зале</option>
+          <option>Праздник в загородном доме</option>
+          <option>Свадьба / свадебные петухи</option>
+          <option>Фуд-боксы</option>
+          <option>Доставка блюд</option>
+          <option>Другое</option>
+        </select>
+      </div>
+      <div>
+        <label for="rdate">Дата мероприятия</label>
+        <input id="rdate" name="rdate" type="date">
+      </div>
+      <div>
+        <label for="rguests">Количество гостей</label>
+        <input id="rguests" name="rguests" type="number" min="1" placeholder="Например, 40">
+      </div>
+      <div class="full">
+        <label for="rcomment">Пожелания</label>
+        <textarea id="rcomment" name="rcomment" placeholder="Кухня, бюджет, особые пожелания…"></textarea>
+      </div>
+      <button type="submit">💬 Отправить заявку в WhatsApp</button>
+      <div class="req-note">Нажимая кнопку, вы перейдёте в WhatsApp — заявка уйдёт только после того,
+        как вы нажмёте «Отправить» в чате. Или просто позвоните: +82 10 8024 7552</div>
+    </form>
+  </div>
 </section>
 
 <section id="contacts">
