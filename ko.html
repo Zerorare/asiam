@@ -15,6 +15,7 @@
 
 <header>
   <div class="nav">
+    <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true" tabindex="-1">
     <div class="logo">
       <svg viewBox="0 0 200 200" aria-hidden="true">
         <circle cx="100" cy="100" r="98" fill="#6e1b21"/>
@@ -42,6 +43,7 @@
       <a href="ko.html" class="active">한국어</a>
     </div>
     <a class="wa-top" href="https://wa.me/821080247552" target="_blank" rel="noopener">WhatsApp</a>
+    <label for="navtoggle" class="burger" aria-label="메뉴"><span></span><span></span><span></span></label>
   </div>
 </header>
 
@@ -65,10 +67,10 @@
     <a class="btn btn-ghost" href="#menu">메뉴 보기</a>
   </div>
   <div class="facts">
-    <div class="fact"><b>50,000원부터</b><small>뷔페 / 1인</small></div>
-    <div class="fact"><b>60가지 이상</b><small>주문 가능 메뉴</small></div>
-    <div class="fact"><b>할랄</b><small>별도 메뉴</small></div>
-    <div class="fact"><b>5시간</b><small>연회 토탈 서비스</small></div>
+    <a class="fact" href="#buffet"><b>50,000원부터</b><small>뷔페 / 1인</small></a>
+    <a class="fact" href="#menu"><b>60가지 이상</b><small>주문 가능 메뉴</small></a>
+    <a class="fact" href="#packages"><b>할랄</b><small>별도 메뉴</small></a>
+    <a class="fact" href="#terms"><b>5시간</b><small>연회 토탈 서비스</small></a>
   </div>
 </div>
 
@@ -130,6 +132,7 @@
     <h2>뷔페</h2>
     <p>가격은 1인 기준입니다. 모든 메뉴는 상담을 통해 확정됩니다.</p>
   </div>
+  <p class="swipe-hint">옆으로 넘겨 모든 옵션을 확인하세요</p>
   <div class="packs">
     <div class="pack">
       <div class="top">
@@ -183,15 +186,8 @@
 
   <div class="terms" style="margin-top:16px">
     <div class="term">
-      <h3>🚐 서비스</h3>
-      <ul>
-        <li>서비스 요금에 식기, 음식 운반, 서빙이 포함됩니다</li>
-        <li>남부 지역(경주·광주) 출장 — 총 금액의 +20%</li>
-        <li>해당 20%에 서빙 직원, 이동 비용, 식기류가 포함됩니다</li>
-      </ul>
-    </div>
-    <div class="term">
-      <h3>🪑 추가 옵션</h3>
+      <h3>🪑 테이블·의자 대여</h3>
+      <p class="lead">수량에 따라 별도 청구됩니다.</p>
       <div class="opt-list">
         <div><span>10인용 원형 테이블</span><b>개당 50,000원</b></div>
         <div><span>6인 이하 원형 테이블</span><b>개당 35,000원</b></div>
@@ -208,6 +204,7 @@
     <h2>연회 패키지</h2>
     <p>가격은 1인 기준입니다. 각 패키지 구성은 담당자와 협의해 확정합니다.</p>
   </div>
+  <p class="swipe-hint">옆으로 넘겨 모든 옵션을 확인하세요</p>
   <div class="packs">
     <div class="pack">
       <div class="top">
@@ -419,6 +416,7 @@
     <p>저희 뷔페의 실제 모습입니다 — 신선하고, 화려하고, 정성 가득하게. 더 많은 사진과 영상은
        <a href="https://www.instagram.com/asiam_kr" target="_blank" rel="noopener">인스타그램</a>에서.</p>
   </div>
+  <p class="swipe-hint">옆으로 넘겨 모든 옵션을 확인하세요</p>
   <div class="gallery">
     <figure class="g-tall"><img src="img/gallery-2.jpg" alt="뷔페 상차림: 새우 브루스케타와 컵 샐러드" loading="lazy"></figure>
     <figure><img src="img/gallery-5.jpg" alt="강변 야외 뷔페에서의 아시아_M 유니폼 서비스" loading="lazy"></figure>
@@ -453,70 +451,81 @@
     <p>핵심 사항 요약 — 자세한 조건은 계약서에 명시됩니다.</p>
   </div>
   <div class="terms">
-    <div class="term">
-      <h3>💰 예약금</h3>
-      <ul>
-        <li>50인 이하 연회 — 예약금 800,000원</li>
-        <li>50–100인 — 1,000,000원</li>
-        <li>100인 초과 — 1,500,000원</li>
-        <li>행사 취소 시 예약금은 환불되지 않습니다</li>
-        <li>입금 스크린샷을 담당자 WhatsApp으로 전송</li>
-      </ul>
-    </div>
-    <div class="term wide">
-      <h3>📋 메뉴 확정과 결제</h3>
-      <p class="lead">행사 날짜가 확정되면 <b>행사 1.5–2개월 전</b>에 저희와 통화하여 메뉴를 협의하고
-        인원수를 알려주십시오 — 이 인원수는 계약서에 명시됩니다.</p>
-      <ul>
-        <li>계약 후 인원 축소는 불가하며, 증원은 가능합니다</li>
-        <li>메뉴 확정 후 총 금액이 산정되며, 기존 납부 금액에 더해 <b>35%</b>를 추가 결제합니다</li>
-        <li>잔금은 연회 종료 후 결제합니다</li>
-        <li>예비 테이블은 사전에 확인하고 미리 요청해 주십시오</li>
-        <li>협의는 계약서상 책임자 1인과 진행합니다</li>
-      </ul>
-    </div>
-    <div class="term wide">
-      <h3>🍽 레스토랑 연회</h3>
-      <p class="lead">계약서에 명시된 시작 시간부터 <b>연회 시간 5시간</b>이 제공되며,
-        늦게 도착하는 손님의 편안한 입장을 위해 <b>1시간</b>이 추가로 제공됩니다.</p>
-      <p class="lead"><b>예시:</b></p>
-      <ul>
-        <li>손님 초대 — 17:00</li>
-        <li>17:00부터 손님 착석 및 콜드 애피타이저 제공</li>
-        <li>따뜻한 요리는 행사 진행에 맞춰 단계별로 제공</li>
-        <li>연회 공식 시작 — 18:00</li>
-        <li>연회 시간 — 18:00 ~ 23:00</li>
-      </ul>
-      <div class="extend">
-        <div>연장: +1시간 — 600,000원</div>
-        <div>+2시간 — 1,100,000원</div>
+    <details class="term" open>
+      <summary><h3>💰 예약금</h3></summary>
+      <div class="term-body">
+        <ul>
+          <li>50인 이하 연회 — 예약금 800,000원</li>
+          <li>50–100인 — 1,000,000원</li>
+          <li>100인 초과 — 1,500,000원</li>
+          <li>행사 취소 시 예약금은 환불되지 않습니다</li>
+          <li>입금 스크린샷을 담당자 WhatsApp으로 전송</li>
+        </ul>
       </div>
-    </div>
-    <div class="term">
-      <h3>🚚 케이터링</h3>
-      <ul>
-        <li>직원 도착 시간과 준비 시간은 고객과 사전 협의합니다</li>
-        <li>행사 형식, 인원, 장소 특성에 따라 달라집니다</li>
-        <li>남부 지역 출장·케이터링 — 총 금액의 +20%</li>
-        <li>해당 금액에 서빙 직원, 이동 비용, 식기류가 포함됩니다</li>
-      </ul>
-    </div>
-    <div class="term">
-      <h3>💳 결제 안내</h3>
-      <ul>
-        <li>서비스 요금 — +10%</li>
-        <li>카드 결제 — 부가세(VAT) +10%</li>
-        <li>세금계산서 발행 — +10%</li>
-      </ul>
-    </div>
-    <div class="term">
-      <h3>👶 어린이</h3>
-      <ul>
-        <li>6–10세 어린이 — 35,000원 / 1인</li>
-        <li>10세 초과 — 성인 요금</li>
-        <li>어린이가 10명을 넘는 경우 — 별도 어린이 메뉴를 개별 협의</li>
-      </ul>
-    </div>
+    </details>
+    <details class="term wide" open>
+      <summary><h3>📋 메뉴 확정과 결제</h3></summary>
+      <div class="term-body">
+        <p class="lead">행사 날짜가 확정되면 <b>행사 1.5–2개월 전</b>에 저희와 통화하여 메뉴를 협의하고
+          인원수를 알려주십시오 — 이 인원수는 계약서에 명시됩니다.</p>
+        <ul>
+          <li>계약 후 인원 축소는 불가하며, 증원은 가능합니다</li>
+          <li>메뉴 확정 후 총 금액이 산정되며, 기존 납부 금액에 더해 <b>35%</b>를 추가 결제합니다</li>
+          <li>잔금은 연회 종료 후 결제합니다</li>
+          <li>예비 테이블은 사전에 확인하고 미리 요청해 주십시오</li>
+          <li>협의는 계약서상 책임자 1인과 진행합니다</li>
+        </ul>
+      </div>
+    </details>
+    <details class="term wide" open>
+      <summary><h3>🍽 레스토랑 연회</h3></summary>
+      <div class="term-body">
+        <p class="lead">계약서에 명시된 시작 시간부터 <b>연회 시간 5시간</b>이 제공되며,
+          늦게 도착하는 손님의 편안한 입장을 위해 <b>1시간</b>이 추가로 제공됩니다.</p>
+        <p class="lead"><b>예시:</b></p>
+        <ul>
+          <li>손님 초대 — 17:00</li>
+          <li>17:00부터 손님 착석 및 콜드 애피타이저 제공</li>
+          <li>따뜻한 요리는 행사 진행에 맞춰 단계별로 제공</li>
+          <li>연회 공식 시작 — 18:00</li>
+          <li>연회 시간 — 18:00 ~ 23:00</li>
+        </ul>
+        <div class="extend">
+          <div>연장: +1시간 — 1,000,000원</div>
+          <div>+2시간 — 1,500,000원</div>
+        </div>
+      </div>
+    </details>
+    <details class="term" open>
+      <summary><h3>🚚 케이터링</h3></summary>
+      <div class="term-body">
+        <ul>
+          <li>직원 도착 시간과 준비 시간은 고객과 사전 협의합니다</li>
+          <li>행사 형식, 인원, 장소 특성에 따라 달라집니다</li>
+        </ul>
+      </div>
+    </details>
+    <details class="term" open>
+      <summary><h3>💳 결제 안내</h3></summary>
+      <div class="term-body">
+        <ul>
+          <li>서비스 요금 — 10%</li>
+          <li>남부 지역 케이터링 — 20% <small>(서빙 직원, 이동, 식기류)</small></li>
+          <li>카드 결제 — 부가세(VAT) +10%</li>
+          <li>세금계산서 발행 — +10%</li>
+        </ul>
+      </div>
+    </details>
+    <details class="term" open>
+      <summary><h3>👶 어린이</h3></summary>
+      <div class="term-body">
+        <ul>
+          <li>6–10세 어린이 — 35,000원 / 1인</li>
+          <li>10세 초과 — 성인 요금</li>
+          <li>어린이가 10명을 넘는 경우 — 별도 어린이 메뉴를 개별 협의</li>
+        </ul>
+      </div>
+    </details>
   </div>
   <p class="terms-disclaimer">본 안내는 참고용입니다. 정확한 조건은 계약 시 담당자에게 확인해 주세요.</p>
 </section>
@@ -614,6 +623,20 @@ document.documentElement.classList.add('js');
     els.forEach(function(el){io.observe(el);});
   }else{
     els.forEach(function(el){el.classList.add('in');});
+  }
+// --- телефон: условия свёрнуты, меню закрывается после выбора пункта ---
+  var isPhone = window.matchMedia('(max-width: 760px)').matches;
+  if (isPhone) {
+    document.querySelectorAll('#terms details.term').forEach(function(d){ d.open = false; });
+  }
+  var toggle = document.getElementById('navtoggle');
+  if (toggle) {
+    document.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){ toggle.checked = false; });
+    });
+    document.addEventListener('click', function(e){
+      if (toggle.checked && !e.target.closest('.nav')) toggle.checked = false;
+    });
   }
   var hdr=document.querySelector('header');
   window.addEventListener('scroll',function(){
