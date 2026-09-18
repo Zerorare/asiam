@@ -370,3 +370,106 @@ select:focus-visible,textarea:focus-visible,label:focus-visible{
   font-size:.9rem;color:var(--ink-soft);padding:10px 13px;background:var(--paper);
   border:1px solid var(--line);border-radius:10px}
 .opt-list b{white-space:nowrap;color:var(--wine);font-size:.92rem}
+
+/* ===================================================================
+   МОБИЛЬНАЯ ВЕРСИЯ v2 — компактная шапка, аккордеоны, свайп-карусели
+   =================================================================== */
+
+/* --- кликабельные факты на главном экране --- */
+a.fact{text-decoration:none;color:inherit}
+a.fact:hover{background:rgba(255,255,255,.14)}
+
+/* --- бургер-кнопка (видна только на телефоне) --- */
+.nav-toggle{position:absolute;width:0;height:0;opacity:0;pointer-events:none}
+.burger{display:none;flex-direction:column;justify-content:center;gap:4px;
+  width:40px;height:36px;padding:8px;border-radius:9px;cursor:pointer;
+  background:rgba(255,255,255,.14);flex-shrink:0}
+.burger span{display:block;height:2px;width:100%;background:#fff;border-radius:2px;
+  transition:transform .25s ease,opacity .2s ease}
+.nav-toggle:checked ~ .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-toggle:checked ~ .burger span:nth-child(2){opacity:0}
+.nav-toggle:checked ~ .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* --- условия: аккордеон --- */
+.term summary{list-style:none;display:flex;align-items:center;justify-content:space-between;
+  gap:10px;cursor:default}
+.term summary::-webkit-details-marker{display:none}
+.term summary h3{margin:0}
+.term summary::after{content:"";flex-shrink:0;width:9px;height:9px;display:none;
+  border-right:2px solid var(--wine);border-bottom:2px solid var(--wine);
+  transform:rotate(45deg) translate(-2px,-2px);opacity:.55;transition:transform .25s ease}
+.term[open] summary::after{transform:rotate(-135deg) translate(-2px,-2px)}
+.term .term-body{margin-top:10px}
+.opt-list{margin-top:4px}
+@media (min-width:760px){
+  .opt-list{grid-template-columns:1fr 1fr}
+  .term summary{pointer-events:none}   /* на компьютере блоки не сворачиваются */
+}
+
+/* --- подсказка про свайп (только на телефоне) --- */
+.swipe-hint{display:none;font-size:.8rem;color:var(--ink-soft);margin:-6px 0 12px;
+  padding-left:2px;opacity:.85}
+.swipe-hint::before{content:"⇄  ";font-size:.95rem;color:var(--wine)}
+
+/* ===================== ТЕЛЕФОН ===================== */
+@media (max-width:760px){
+
+  /* шапка: одна компактная строка вместо трёх */
+  .nav{flex-wrap:wrap;gap:8px;padding:8px 12px;row-gap:0}
+  .logo{order:1;font-size:1.05rem;gap:7px}
+  .logo svg{width:30px;height:30px}
+  .logo span{padding:1px 6px;font-size:.95rem}
+  .lang-switch{order:2;margin-left:auto;gap:0}
+  .lang-switch a{font-size:.75rem;padding:5px 6px}
+  .nav .wa-top{display:none}          /* внизу есть плавающая кнопка WhatsApp */
+  .burger{order:3;display:flex}
+
+  /* меню открывается по бургеру */
+  .nav-links{order:4;width:100%;display:none;flex-direction:column;gap:0;
+    margin:6px -12px 0;padding:6px 12px 8px;
+    border-top:1px solid rgba(255,255,255,.2)}
+  .nav-toggle:checked ~ .nav-links{display:flex}
+  .nav-links a{padding:12px 10px;font-size:.98rem;border-radius:10px}
+  .nav-links a:active{background:rgba(255,255,255,.18)}
+
+  html{scroll-padding-top:60px}
+
+  /* главный экран компактнее */
+  .hero{padding:34px 16px 44px}
+  .hero .logo-big{width:104px;height:104px;margin-bottom:14px}
+  .hero h1{line-height:1.2}
+  .hero .facts{gap:8px}
+  .fact{padding:10px 13px}
+
+  /* пакеты и галерея — горизонтальный свайп вместо длинной ленты */
+  .packs,.gallery{
+    display:flex;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    gap:12px;margin-inline:-14px;padding:2px 14px 12px;
+    grid-auto-rows:unset;grid-auto-flow:unset;
+  }
+  .packs>.pack,.gallery>figure{flex:0 0 85%;scroll-snap-align:center}
+  .gallery>figure{height:250px}
+  .gallery>figure.g-tall{grid-row:auto}
+  .swipe-hint{display:block}
+
+  /* условия — аккордеон: видны только заголовки */
+  .terms{gap:10px}
+  .term{padding:4px 16px}
+  .term summary{padding:13px 0;cursor:pointer}
+  .term summary::after{display:block}
+  .term .term-body{padding-bottom:14px}
+  .term summary h3{font-size:.95rem}
+
+  /* мелочи */
+  section{padding:38px 14px 4px}
+  .sec-head{margin-bottom:16px}
+  .slogan-band{padding:34px 18px}
+  .about{padding:16px}
+  .req-wrap{padding:20px 16px}
+}
+
+@media (max-width:380px){
+  .logo{font-size:.95rem}
+  .lang-switch a{padding:5px 4px;font-size:.72rem}
+}

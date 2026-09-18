@@ -15,6 +15,7 @@
 
 <header>
   <div class="nav">
+    <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true" tabindex="-1">
     <div class="logo">
       <svg viewBox="0 0 200 200" aria-hidden="true">
         <circle cx="100" cy="100" r="98" fill="#6e1b21"/>
@@ -42,6 +43,7 @@
       <a href="ko.html">한국어</a>
     </div>
     <a class="wa-top" href="https://wa.me/821080247552" target="_blank" rel="noopener">WhatsApp</a>
+    <label for="navtoggle" class="burger" aria-label="Menu"><span></span><span></span><span></span></label>
   </div>
 </header>
 
@@ -65,10 +67,10 @@
     <a class="btn btn-ghost" href="#menu">See the menu</a>
   </div>
   <div class="facts">
-    <div class="fact"><b>from ₩50,000</b><small>buffet / person</small></div>
-    <div class="fact"><b>60+ dishes</b><small>menu to order</small></div>
-    <div class="fact"><b>Halal</b><small>separate menu</small></div>
-    <div class="fact"><b>5 hours</b><small>turnkey banquet</small></div>
+    <a class="fact" href="#buffet"><b>from ₩50,000</b><small>buffet / person</small></a>
+    <a class="fact" href="#menu"><b>60+ dishes</b><small>menu to order</small></a>
+    <a class="fact" href="#packages"><b>Halal</b><small>separate menu</small></a>
+    <a class="fact" href="#terms"><b>5 hours</b><small>turnkey banquet</small></a>
   </div>
 </div>
 
@@ -130,6 +132,7 @@
     <h2>Buffet</h2>
     <p>Prices are per person. All items are agreed on during a consultation.</p>
   </div>
+  <p class="swipe-hint">Swipe sideways to see all options</p>
   <div class="packs">
     <div class="pack">
       <div class="top">
@@ -183,15 +186,8 @@
 
   <div class="terms" style="margin-top:16px">
     <div class="term">
-      <h3>🚐 Service</h3>
-      <ul>
-        <li>The service fee covers tableware, transport of the food and staff service</li>
-        <li>Travel to southern Korea (Gyeongju, Gwangju) — +20% of the total</li>
-        <li>That 20% covers waiting staff, travel and cutlery</li>
-      </ul>
-    </div>
-    <div class="term">
-      <h3>🪑 Add-ons</h3>
+      <h3>🪑 Table and chair rental</h3>
+      <p class="lead">Charged separately, per item.</p>
       <div class="opt-list">
         <div><span>Round table for 10 guests</span><b>₩50,000 each</b></div>
         <div><span>Round table for up to 6 guests</span><b>₩35,000 each</b></div>
@@ -208,6 +204,7 @@
     <h2>Banquet packages</h2>
     <p>Prices are per person. The contents of each package are agreed with the organizer.</p>
   </div>
+  <p class="swipe-hint">Swipe sideways to see all options</p>
   <div class="packs">
     <div class="pack">
       <div class="top">
@@ -419,6 +416,7 @@
     <p>This is what our buffets look like in real life — fresh, vivid and made with love. More photos and videos on
        <a href="https://www.instagram.com/asiam_kr" target="_blank" rel="noopener">Instagram</a>.</p>
   </div>
+  <p class="swipe-hint">Swipe sideways to see all options</p>
   <div class="gallery">
     <figure class="g-tall"><img src="img/gallery-2.jpg" alt="Buffet presentation: shrimp bruschetta and portioned salads" loading="lazy"></figure>
     <figure><img src="img/gallery-5.jpg" alt="ASIA_M outdoor buffet by the river with branded service" loading="lazy"></figure>
@@ -453,70 +451,81 @@
     <p>The essentials in brief — full terms are set out in the contract.</p>
   </div>
   <div class="terms">
-    <div class="term">
-      <h3>💰 Deposit and booking</h3>
-      <ul>
-        <li>Banquet up to 50 guests — ₩800,000 deposit</li>
-        <li>50 to 100 guests — ₩1,000,000</li>
-        <li>Over 100 guests — ₩1,500,000</li>
-        <li>The deposit is non-refundable if the event is cancelled</li>
-        <li>Payment screenshot — to the organizer via WhatsApp</li>
-      </ul>
-    </div>
-    <div class="term wide">
-      <h3>📋 Menu approval and payment</h3>
-      <p class="lead">Once your date is booked, <b>1.5–2 months before the event</b> you call us to agree
-        on the menu and state the number of guests — that number is fixed in the contract.</p>
-      <ul>
-        <li>After signing, the guest count cannot be reduced — but it can be increased</li>
-        <li>Once the menu is agreed, the total is calculated and the client pays a further <b>35%</b> on top of the amount already paid</li>
-        <li>The remaining balance is paid after the banquet</li>
-        <li>Reserve tables must be confirmed and requested in advance</li>
-        <li>Coordination — with one responsible person named in the contract</li>
-      </ul>
-    </div>
-    <div class="term wide">
-      <h3>🍽 Banquet at our restaurant</h3>
-      <p class="lead">You get <b>5 hours of banquet time</b> from the start time stated in the contract,
-        plus an extra <b>1 hour</b> for comfortable gathering and seating of late guests.</p>
-      <p class="lead"><b>Example:</b></p>
-      <ul>
-        <li>Guests invited — 5:00 pm</li>
-        <li>From 5:00 pm guests are seated and cold appetizers are served</li>
-        <li>Hot dishes are brought out in stages, following the event program</li>
-        <li>Official start of the banquet — 6:00 pm</li>
-        <li>Banquet time — 6:00 pm to 11:00 pm</li>
-      </ul>
-      <div class="extend">
-        <div>Extension: +1 hour — ₩600,000</div>
-        <div>+2 hours — ₩1,100,000</div>
+    <details class="term" open>
+      <summary><h3>💰 Deposit and booking</h3></summary>
+      <div class="term-body">
+        <ul>
+          <li>Banquet up to 50 guests — ₩800,000 deposit</li>
+          <li>50 to 100 guests — ₩1,000,000</li>
+          <li>Over 100 guests — ₩1,500,000</li>
+          <li>The deposit is non-refundable if the event is cancelled</li>
+          <li>Payment screenshot — to the organizer via WhatsApp</li>
+        </ul>
       </div>
-    </div>
-    <div class="term">
-      <h3>🚚 Catering</h3>
-      <ul>
-        <li>Staff arrival time and preparation time are agreed with the customer in advance</li>
-        <li>They depend on the event format, number of guests and venue specifics</li>
-        <li>Travel and catering to southern Korea — +20% of the total</li>
-        <li>That amount covers waiting staff, travel and cutlery</li>
-      </ul>
-    </div>
-    <div class="term">
-      <h3>💳 Payment and fees</h3>
-      <ul>
-        <li>Service charge — +10%</li>
-        <li>Card payment — +10% VAT</li>
-        <li>Tax documents — +10%</li>
-      </ul>
-    </div>
-    <div class="term">
-      <h3>👶 Children</h3>
-      <ul>
-        <li>Children 6–10 years old — ₩35,000 / person</li>
-        <li>Over 10 years old — adult rate</li>
-        <li>More than 10 children — a separate kids' menu is agreed individually</li>
-      </ul>
-    </div>
+    </details>
+    <details class="term wide" open>
+      <summary><h3>📋 Menu approval and payment</h3></summary>
+      <div class="term-body">
+        <p class="lead">Once your date is booked, <b>1.5–2 months before the event</b> you call us to agree
+          on the menu and state the number of guests — that number is fixed in the contract.</p>
+        <ul>
+          <li>After signing, the guest count cannot be reduced — but it can be increased</li>
+          <li>Once the menu is agreed, the total is calculated and the client pays a further <b>35%</b> on top of the amount already paid</li>
+          <li>The remaining balance is paid after the banquet</li>
+          <li>Reserve tables must be confirmed and requested in advance</li>
+          <li>Coordination — with one responsible person named in the contract</li>
+        </ul>
+      </div>
+    </details>
+    <details class="term wide" open>
+      <summary><h3>🍽 Banquet at our restaurant</h3></summary>
+      <div class="term-body">
+        <p class="lead">You get <b>5 hours of banquet time</b> from the start time stated in the contract,
+          plus an extra <b>1 hour</b> for comfortable gathering and seating of late guests.</p>
+        <p class="lead"><b>Example:</b></p>
+        <ul>
+          <li>Guests invited — 5:00 pm</li>
+          <li>From 5:00 pm guests are seated and cold appetizers are served</li>
+          <li>Hot dishes are brought out in stages, following the event program</li>
+          <li>Official start of the banquet — 6:00 pm</li>
+          <li>Banquet time — 6:00 pm to 11:00 pm</li>
+        </ul>
+        <div class="extend">
+          <div>Extension: +1 hour — ₩1,000,000</div>
+          <div>+2 hours — ₩1,500,000</div>
+        </div>
+      </div>
+    </details>
+    <details class="term" open>
+      <summary><h3>🚚 Catering</h3></summary>
+      <div class="term-body">
+        <ul>
+          <li>Staff arrival time and preparation time are agreed with the customer in advance</li>
+          <li>They depend on the event format, number of guests and venue specifics</li>
+        </ul>
+      </div>
+    </details>
+    <details class="term" open>
+      <summary><h3>💳 Payment and fees</h3></summary>
+      <div class="term-body">
+        <ul>
+          <li>Service charge — 10%</li>
+          <li>Catering to southern Korea — 20% <small>(waiting staff, travel, cutlery)</small></li>
+          <li>Card payment — +10% VAT</li>
+          <li>Tax documents — +10%</li>
+        </ul>
+      </div>
+    </details>
+    <details class="term" open>
+      <summary><h3>👶 Children</h3></summary>
+      <div class="term-body">
+        <ul>
+          <li>Children 6–10 years old — ₩35,000 / person</li>
+          <li>Over 10 years old — adult rate</li>
+          <li>More than 10 children — a separate kids' menu is agreed individually</li>
+        </ul>
+      </div>
+    </details>
   </div>
   <p class="terms-disclaimer">This information is for reference. Please confirm the exact terms with the organizer when signing the contract.</p>
 </section>
@@ -614,6 +623,20 @@ document.documentElement.classList.add('js');
     els.forEach(function(el){io.observe(el);});
   }else{
     els.forEach(function(el){el.classList.add('in');});
+  }
+// --- телефон: условия свёрнуты, меню закрывается после выбора пункта ---
+  var isPhone = window.matchMedia('(max-width: 760px)').matches;
+  if (isPhone) {
+    document.querySelectorAll('#terms details.term').forEach(function(d){ d.open = false; });
+  }
+  var toggle = document.getElementById('navtoggle');
+  if (toggle) {
+    document.querySelectorAll('.nav-links a').forEach(function(a){
+      a.addEventListener('click', function(){ toggle.checked = false; });
+    });
+    document.addEventListener('click', function(e){
+      if (toggle.checked && !e.target.closest('.nav')) toggle.checked = false;
+    });
   }
   var hdr=document.querySelector('header');
   window.addEventListener('scroll',function(){
