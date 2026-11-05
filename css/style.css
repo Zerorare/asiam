@@ -473,3 +473,115 @@ a.fact:hover{background:rgba(255,255,255,.14)}
   .logo{font-size:.95rem}
   .lang-switch a{padding:5px 4px;font-size:.72rem}
 }
+
+/* корейская версия: переносить строки по словам, а не посреди слова */
+html[lang="ko"]{word-break:keep-all;overflow-wrap:break-word}
+
+/* ===================================================================
+   НОВОГОДНИЙ БЛОК (сезонный): полоса-анонс под шапкой + раздел #newyear
+   Всё с классом .ny-season прячется само после даты, указанной
+   в <head> каждой страницы (скрипт ставит класс .ny-off на <html>)
+   =================================================================== */
+.ny-off .ny-season{display:none!important}
+
+/* --- золотая полоса-анонс под шапкой --- */
+.ny-bar{
+  display:block;text-align:center;text-decoration:none;color:#3a1013;
+  font-size:.9rem;font-weight:600;line-height:1.35;padding:9px 16px;
+  background:linear-gradient(90deg,#c9a052,#ecd29a 25%,#c9a052 50%,#ecd29a 75%,#c9a052);
+  background-size:200% 100%;animation:ny-shine 9s linear infinite;
+  box-shadow:inset 0 -1px 0 rgba(58,16,19,.18);
+}
+.ny-bar b{font-weight:800}
+.ny-bar .ny-more{white-space:nowrap;margin-left:6px;text-decoration:underline;text-underline-offset:3px}
+.ny-bar:hover .ny-more{text-decoration-thickness:2px}
+@keyframes ny-shine{from{background-position:0 0}to{background-position:-200% 0}}
+
+/* --- карточка раздела --- */
+#newyear{padding-top:40px}
+.ny-card{
+  position:relative;overflow:hidden;color:#fff;
+  display:grid;column-gap:36px;
+  grid-template-columns:minmax(260px,410px) 1fr;
+  grid-template-rows:1fr auto auto 1fr;
+  grid-template-areas:"poster ." "poster head" "poster body" "poster .";
+  padding:28px;border-radius:22px;border:1px solid rgba(220,184,119,.4);
+  background:
+    radial-gradient(circle at 8% 12%,rgba(220,184,119,.24),transparent 42%),
+    radial-gradient(circle at 95% 90%,rgba(220,184,119,.18),transparent 46%),
+    linear-gradient(150deg,var(--wine-deep),var(--wine));
+  box-shadow:0 18px 50px rgba(56,12,16,.28);
+}
+/* лёгкий «снег» на фоне */
+.ny-card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.45;
+  background-image:
+    radial-gradient(rgba(255,255,255,.6) 1px,transparent 1.7px),
+    radial-gradient(rgba(255,236,200,.45) 1px,transparent 1.7px);
+  background-size:52px 52px,31px 31px;background-position:0 0,14px 19px;
+}
+.ny-card > *{position:relative}
+.ny-head{grid-area:head}
+.ny-body{grid-area:body}
+.ny-kicker{
+  display:inline-block;background:var(--gold);color:#3a1013;font-weight:800;font-size:.78rem;
+  letter-spacing:.12em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:14px;
+}
+.ny-head h2{font-size:clamp(1.6rem,3.4vw,2.35rem);font-weight:900;line-height:1.15}
+.ny-head h2 span{color:var(--gold)}
+
+/* афиша */
+.ny-poster{
+  grid-area:poster;align-self:center;display:block;position:relative;overflow:hidden;
+  border-radius:16px;border:2px solid rgba(220,184,119,.6);
+  box-shadow:0 16px 36px rgba(0,0,0,.38);
+}
+.ny-poster img{display:block;width:100%;height:auto;
+  transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.ny-poster:hover img{transform:scale(1.03)}
+/* подсказка «открыть афишу» — только при наведении, чтобы не закрывать постер */
+.ny-zoom{
+  position:absolute;left:50%;top:50%;padding:9px 16px;border-radius:999px;white-space:nowrap;
+  background:rgba(36,10,12,.82);color:#fff;font-size:.85rem;font-weight:700;
+  opacity:0;transform:translate(-50%,-40%);transition:opacity .25s ease,transform .25s ease;
+  pointer-events:none;
+}
+.ny-poster:hover .ny-zoom,.ny-poster:focus-visible .ny-zoom{opacity:1;transform:translate(-50%,-50%)}
+@media (hover:none){.ny-zoom{display:none}}
+
+/* текст и преимущества */
+.ny-lead{color:#eddcce;margin-top:14px;font-size:1.02rem}
+.ny-list{list-style:none;margin-top:18px;display:grid;gap:10px}
+.ny-list li{
+  display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:14px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);
+  font-size:.92rem;color:#ead6c8;
+}
+.ny-list b{display:block;color:#fff;font-size:.98rem;margin-bottom:1px}
+.ny-list a{color:var(--gold);font-weight:700;text-underline-offset:3px;white-space:nowrap}
+.ny-addr{display:flex;flex-wrap:wrap;column-gap:12px;row-gap:2px}
+.ny-ico{font-size:1.35rem;line-height:1.2;flex-shrink:0}
+.ny-tags{margin-top:16px;font-size:.74rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:#e0c8ba}
+.ny-cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* адрес банкетного зала в контактах */
+.contact-wrap .c-addr{margin-top:20px;font-size:.92rem;color:#e8d2c4;
+  display:flex;flex-wrap:wrap;justify-content:center;column-gap:8px;row-gap:2px}
+.c-addr a{color:var(--gold);font-weight:700;text-underline-offset:3px;white-space:nowrap}
+
+@media (max-width:760px){
+  .ny-bar{font-size:.82rem;padding:8px 12px}
+  .ny-bar .ny-more{display:none}             /* на телефоне вместо «Подробнее» — */
+  .ny-bar b::after{content:"\00a0→"}          /* стрелка, приклеенная к последнему слову */
+  #newyear{padding-top:26px}
+  .ny-card{
+    grid-template-columns:1fr;grid-template-rows:auto;
+    grid-template-areas:"head" "poster" "body";
+    padding:22px 16px;border-radius:18px;
+  }
+  .ny-head{text-align:center;margin-bottom:16px}
+  .ny-poster{width:100%;max-width:420px;margin:0 auto}
+  .ny-body{margin-top:18px}
+  .ny-cta .btn{flex:1 1 100%;justify-content:center}
+}

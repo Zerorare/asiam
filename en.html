@@ -9,7 +9,29 @@
 <link rel="alternate" hreflang="ru" href="https://zerorare.github.io/asiam/">
 <link rel="alternate" hreflang="en" href="https://zerorare.github.io/asiam/en.html">
 <link rel="alternate" hreflang="ko" href="https://zerorare.github.io/asiam/ko.html">
+<link rel="alternate" hreflang="x-default" href="https://zerorare.github.io/asiam/">
+<link rel="canonical" href="https://zerorare.github.io/asiam/en.html">
+<meta name="theme-color" content="#6e1b21">
+<!-- превью ссылки в мессенджерах (WhatsApp, Telegram, KakaoTalk, Instagram) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ASIA_M">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:url" content="https://zerorare.github.io/asiam/en.html">
+<meta property="og:title" content="ASIA_M — Catering &amp; Banquets in South Korea">
+<meta property="og:description" content="Korean, European and Asian cuisine: buffet catering from ₩50,000 per person, turnkey banquets, food boxes, halal menu. Order via WhatsApp: +82 10 8024 7552">
+<meta property="og:image" content="https://zerorare.github.io/asiam/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ASIA_M buffet table: canapés, salads and appetizers">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="css/style.css">
+<script>
+/* Новогодний блок — сезонный: с этой даты (время Кореи) он скрывается сам.
+   Чтобы продлить или включить снова через год — поменяйте дату (и в en.html, ko.html). */
+if (Date.now() >= Date.parse('2027-01-15T00:00:00+09:00')) document.documentElement.classList.add('ny-off');
+</script>
 </head>
 <body>
 
@@ -46,6 +68,7 @@
     <label for="navtoggle" class="burger" aria-label="Menu"><span></span><span></span><span></span></label>
   </div>
 </header>
+<a class="ny-bar ny-season" href="#newyear">🎄 <b>Now taking bookings for New Year corporate parties!</b> <span class="ny-more">Learn more →</span></a>
 
 <div class="hero">
   <svg class="logo-big" viewBox="0 0 200 200" aria-label="Asia M logo">
@@ -73,6 +96,34 @@
     <a class="fact" href="#terms"><b>5 hours</b><small>turnkey banquet</small></a>
   </div>
 </div>
+
+<!-- ===== НОВОГОДНИЙ БЛОК (сезонный) — прячется сам после даты из <head>. Афиша: img/newyear-corporate.jpg ===== -->
+<section id="newyear" class="ny-season">
+  <div class="ny-card">
+    <div class="ny-head">
+      <div class="ny-kicker">🎄 New Year 2027</div>
+      <h2>New Year corporate parties — <span>now taking bookings!</span></h2>
+    </div>
+    <a class="ny-poster" href="img/newyear-corporate.jpg" target="_blank" rel="noopener">
+      <img src="img/newyear-corporate.jpg" width="1000" height="1200" loading="lazy" decoding="async"
+           alt="ASIA_M poster: now taking bookings for New Year corporate parties. Compliments of the house — musicians and a photographer. Party in House banquet hall, 경기도 시흥시 마유로 416, tel. 010 8024 7552">
+      <span class="ny-zoom">🔍 Open the poster</span>
+    </a>
+    <div class="ny-body">
+      <p class="ny-lead">Celebrate the New Year with your whole team at the Party in House banquet hall. We take care of the menu, table setting and service — all you have to do is celebrate.</p>
+      <ul class="ny-list">
+        <li><span class="ny-ico">🎷</span><div><b>Compliments of the house</b>Musicians and a photographer at your party — free of charge</div></li>
+        <li><span class="ny-ico">🍽️</span><div><b>Delicious food</b>We discuss the menu and put it together with you</div></li>
+        <li><span class="ny-ico">📍</span><div><b>Party in House banquet hall</b><span class="ny-addr"><span>경기도 시흥시 마유로 416 (416 Mayu-ro, Siheung-si, Gyeonggi-do)</span><a href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%EB%A7%88%EC%9C%A0%EB%A1%9C%20416" target="_blank" rel="noopener">Open map</a></span></div></li>
+      </ul>
+      <p class="ny-tags">Corporate parties · Weddings · Anniversaries · Family celebrations · and other events</p>
+      <div class="ny-cta">
+        <a class="btn btn-wa" href="https://wa.me/821080247552?text=Hello!%20I'd%20like%20to%20book%20a%20New%20Year%20corporate%20party" target="_blank" rel="noopener">💬 Book a date</a>
+        <a class="btn btn-ghost" href="tel:+821080247552">📞 +82 10 8024 7552</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="services">
   <div class="sec-head">
@@ -542,7 +593,8 @@
       if(f.rdate.value)m+='\nDate: '+f.rdate.value;
       if(f.rguests.value)m+='\nGuests: '+f.rguests.value;
       if(f.rcomment.value)m+='\nNotes: '+f.rcomment.value;
-      window.open('https://wa.me/821080247552?text='+encodeURIComponent(m),'_blank');
+      var u='https://wa.me/821080247552?text='+encodeURIComponent(m);
+      if(!window.open(u,'_blank'))location.href=u;
       return false;">
       <div>
         <label for="rname">Your name *</label>
@@ -552,10 +604,12 @@
         <label for="rformat">Event type *</label>
         <select id="rformat" name="rformat" required>
           <option>Banquet at the restaurant</option>
+          <option>Corporate party</option>
           <option>Buffet catering</option>
           <option>Catering in a banquet hall</option>
           <option>Celebration at a country house</option>
           <option>Wedding / wedding roosters</option>
+          <option>Anniversary / birthday</option>
           <option>Food boxes</option>
           <option>Dish delivery</option>
           <option>Other</option>
@@ -589,12 +643,13 @@
       <a class="c-tel" href="tel:+821080247552">📞 +82 10 8024 7552</a>
       <a class="c-ig" href="https://www.instagram.com/asiam_kr" target="_blank" rel="noopener">📸 Instagram: asiam_kr</a>
     </div>
+    <p class="c-addr"><span>📍 Party in House banquet hall:</span><span>경기도 시흥시 마유로 416 (416 Mayu-ro, Siheung-si, Gyeonggi-do)</span><a href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%8B%9C%ED%9D%A5%EC%8B%9C%20%EB%A7%88%EC%9C%A0%EB%A1%9C%20416" target="_blank" rel="noopener">open map</a></p>
   </div>
 </section>
 
 <footer>
   © 2026 ASIA_M — buffet catering and banquets · South Korea<br>
-  WhatsApp: +82 10 8024 7552 · Instagram: <a href="https://www.instagram.com/asiam_kr" target="_blank" rel="noopener">asiam_kr</a> / <a href="https://www.instagram.com/Vladsim86" target="_blank" rel="noopener">Vladsim86</a>
+  WhatsApp: <a href="https://wa.me/821080247552" target="_blank" rel="noopener">+82 10 8024 7552</a> · Instagram: <a href="https://www.instagram.com/asiam_kr" target="_blank" rel="noopener">asiam_kr</a> / <a href="https://www.instagram.com/Vladsim86" target="_blank" rel="noopener">Vladsim86</a>
 </footer>
 
 <a class="wa-float" href="https://wa.me/821080247552" target="_blank" rel="noopener" aria-label="Message us on WhatsApp">
@@ -605,7 +660,7 @@
 <script>
 document.documentElement.classList.add('js');
 (function(){
-  var sels='.card,.svc,.pack,.term,.gallery figure,.dish,.about,.req-wrap,.sec-head,.slogan-band .q,.contact-wrap';
+  var sels='.ny-card,.card,.svc,.pack,.term,.gallery figure,.dish,.about,.req-wrap,.sec-head,.slogan-band .q,.contact-wrap';
   var els=document.querySelectorAll(sels);
   els.forEach(function(el){el.classList.add('reveal');});
   var groups={};
