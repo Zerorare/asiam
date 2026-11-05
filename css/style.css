@@ -628,3 +628,76 @@ html[lang="ko"]{word-break:keep-all;overflow-wrap:break-word}
   .ny-body{margin-top:18px}
   .ny-cta .btn{flex:1 1 100%;justify-content:center}
 }
+
+/* ===================================================================
+   НОВОГОДНИЙ ДЕКОР (сезонный): узор на фоне, шары на главном экране,
+   композиции у заголовков разделов, ветки у «Контактов», ёлочки
+   в подвале. Картинки — в папке img/ny/. Всё выключается вместе
+   с новогодним блоком (класс .ny-off на <html>).
+   =================================================================== */
+
+/* едва заметный узор из золотых снежинок на фоне страницы */
+html:not(.ny-off) body{background-image:url('../img/ny/pattern.svg');background-size:240px 240px}
+
+/* ёлочные шары на нитях свисают с гирлянды по бокам главного экрана */
+html:not(.ny-off) .hero{position:relative}
+html:not(.ny-off) .hero::before,
+html:not(.ny-off) .hero::after{
+  content:"";position:absolute;top:0;width:150px;height:300px;z-index:1;pointer-events:none;
+  background:url('../img/ny/hang-left.svg') top center/contain no-repeat;
+  transform-origin:50% 0;animation:ny-swing 6s ease-in-out infinite alternate;
+}
+html:not(.ny-off) .hero::before{left:4%}
+html:not(.ny-off) .hero::after{right:4%;background-image:url('../img/ny/hang-right.svg');
+  animation-duration:7s;animation-delay:-3s}
+@keyframes ny-swing{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+
+/* новогодние композиции в правом верхнем углу разделов (рядом с заголовком) */
+html:not(.ny-off) #services,html:not(.ny-off) #buffet,html:not(.ny-off) #packages,
+html:not(.ny-off) #menu,html:not(.ny-off) #gallery,html:not(.ny-off) #about,
+html:not(.ny-off) #terms,html:not(.ny-off) #request{position:relative}
+html:not(.ny-off) #services::after,html:not(.ny-off) #buffet::after,html:not(.ny-off) #packages::after,
+html:not(.ny-off) #menu::after,html:not(.ny-off) #gallery::after,html:not(.ny-off) #about::after,
+html:not(.ny-off) #terms::after,html:not(.ny-off) #request::after{
+  content:"";position:absolute;top:0;right:12px;width:240px;height:157px;pointer-events:none;
+  background:url('../img/ny/corner-a.svg') top right/contain no-repeat;
+}
+html:not(.ny-off) #buffet::after,html:not(.ny-off) #gallery::after,
+html:not(.ny-off) #request::after{background-image:url('../img/ny/corner-b.svg')}
+html:not(.ny-off) #packages::after,html:not(.ny-off) #about::after{background-image:url('../img/ny/corner-c.svg')}
+
+/* еловые ветки с шарами в верхних углах бордового блока «Контакты» */
+html:not(.ny-off) .contact-wrap{position:relative;overflow:hidden}
+html:not(.ny-off) .contact-wrap > *{position:relative;z-index:1}
+html:not(.ny-off) .contact-wrap::before,
+html:not(.ny-off) .contact-wrap::after{
+  content:"";position:absolute;top:0;width:clamp(110px,14vw,180px);height:clamp(73px,9.33vw,120px);
+  pointer-events:none;background:url('../img/ny/sprig.svg') top left/contain no-repeat;
+}
+html:not(.ny-off) .contact-wrap::before{left:0}
+html:not(.ny-off) .contact-wrap::after{right:0;transform:scaleX(-1)}
+
+/* подвал: ряд золотых ёлочек и поздравление */
+.ny-greet{margin:0 auto 18px;font-size:1.15rem;font-weight:800;font-style:italic;color:var(--wine)}
+.ny-greet::before{
+  content:"";display:block;width:min(520px,100%);aspect-ratio:520/110;margin:0 auto 6px;
+  background:url('../img/ny/trees.svg') center/contain no-repeat;
+}
+
+@media (max-width:1199px){
+  html:not(.ny-off) .hero::before,html:not(.ny-off) .hero::after{width:110px;height:220px}
+}
+@media (max-width:760px){
+  html:not(.ny-off) .hero::before,html:not(.ny-off) .hero::after{width:64px;height:128px}
+  html:not(.ny-off) .hero::before{left:10px}
+  html:not(.ny-off) .hero::after{right:10px}
+  html:not(.ny-off) #services::after,html:not(.ny-off) #buffet::after,html:not(.ny-off) #packages::after,
+  html:not(.ny-off) #menu::after,html:not(.ny-off) #gallery::after,html:not(.ny-off) #about::after,
+  html:not(.ny-off) #terms::after,html:not(.ny-off) #request::after{right:2px;width:112px;height:73px}
+  /* заголовок не заходит под композицию; описание под ней — на всю ширину */
+  html:not(.ny-off) #services .sec-head h2,html:not(.ny-off) #buffet .sec-head h2,html:not(.ny-off) #packages .sec-head h2,
+  html:not(.ny-off) #menu .sec-head h2,html:not(.ny-off) #gallery .sec-head h2,html:not(.ny-off) #about .sec-head h2,
+  html:not(.ny-off) #terms .sec-head h2,html:not(.ny-off) #request .sec-head h2{max-width:calc(100% - 104px)}
+  html:not(.ny-off) .contact-wrap{padding-top:82px}
+  html:not(.ny-off) .contact-wrap::before,html:not(.ny-off) .contact-wrap::after{width:110px;height:73px}
+}
